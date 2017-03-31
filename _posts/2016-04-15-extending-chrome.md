@@ -1,7 +1,7 @@
 ---
 layout: single
 section-type: post
-title: how deep does the rabbit hole go?
+title: Extending Chrome
 category: development
 tags: [ 'javascript', 'injection' ]
 ---

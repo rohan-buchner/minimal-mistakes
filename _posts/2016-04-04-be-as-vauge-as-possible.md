@@ -1,7 +1,7 @@
 ---
 layout: single
 section-type: post
-title: y u do dis?
+title: On App Updates...
 category: rant
 post-preview-words: 30
 fb-share: True
