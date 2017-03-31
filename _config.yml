@@ -7,15 +7,15 @@
 
 # Site Settings
 locale                   : "en"
-title                    : "Site Title"
-title_separator          : "-"
-name                     : "Your Name"
-description              : "An amazing website."
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+title                    : "{{ RO }}"
+title_separator          : "|"
+name                     : "Rohan Büchner"
+description              : "Capetonian Developer & Musician"
+url                      : "https://rohan-buchner.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-# breadcrumbs            : false # true, false (default)
+repository               : "rohan-buchner/rohan-buchner.github.io"
+teaser                   : "/assets/images/dunes.jpg" # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+breadcrumbs              : true # true, false (default)
 words_per_minute         : 200
 comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
@@ -77,11 +77,11 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an amazing person."
-  location         : "Somewhere"
-  email            :
+  name             : "Rohan Büchner"
+  avatar           : "/assets/img/new_profile.jpg"
+  bio              : "Developer & Musician. All around nice guy. I'm good with computers"
+  location         : "Cape Town"
+  email            : "rohan.buchner@gmail.com"
   uri              :
   bitbucket        :
   codepen          :
@@ -89,15 +89,15 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           :
+  github           : "https://github.com/rohan-buchner"
   google_plus      :
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         :
+  linkedin         : "rohanbuchner"
   pinterest        :
-  soundcloud       :
-  stackoverflow    : # "123456/username" (the last part of your profile url, e.g. http://stackoverflow.com/users/123456/username)
+  soundcloud       : "rohan_buchner"
+  stackoverflow    : "1105314/rohan-büchner" # "123456/username" (the last part of your profile url, e.g. http://stackoverflow.com/users/123456/username)
   steam            :
   tumblr           :
   twitter          :
