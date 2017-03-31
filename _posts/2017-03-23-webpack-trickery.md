@@ -16,9 +16,7 @@ Below I'll demonstrate a few cool tricks that I've learned that really isn't as 
 **Serving 3rd party js libraries such as jQuery, momentjs etc:**
 
 In your webpack.js file
-<pre>
-<code data-trim class="javascript">
-
+~~~ javascript
 module.exports = {
   module: {
      resolve: {
@@ -28,16 +26,14 @@ module.exports = {
      }
   } 
 }
-</code></pre>
+~~~
 
 In the example above, moment was installed using npm and located in my node_modules folder.
 In my app code the above allows me "access" the moment foldr as such via:
 
-<pre><code data-trim class="typescript">
-
+~~~ javascript
 import * as moment from 'moment/moment';
-
-</code></pre>
+~~~
 
 **Adding Bootstrap or FontAwesome**
 
@@ -45,21 +41,18 @@ There are 2 amazing opensource projects: [bootstrap-loader](https://github.com/s
 
 To implment them install via npm and add the following to your webpack entry
 
-<pre>
-	<code data-trim class="javascript">
+~~~ javascript
   entry: {
     vendor: [
       'font-awesome-loader',
       bootstrapEntryPoints.dev   //or .prod
     ]
   }
-	 </code>
- </pre>
+~~~
 
  Setup a helper service or point to the config path manually:
 
-<pre>
-	<code data-trim class="javascript">
+~~~ javascript
 'use strict';
 
 require('dotenv').config();
@@ -101,14 +94,11 @@ if (bootstraprcCustomLocation) {
 module.exports = {
   dev: bootstrapEntryPoint
 };
-	 </code>
- </pre>
+~~~
 
  ...and add a *.bootstraprc* file. This will allow you to manually configure and cherry pick features for your bootstap build.
 
-<pre>
-	<code data-trim class="text">
- ---
+~~~ javascript
 # Output debugging info
 # loglevel: debug
 
@@ -236,6 +226,5 @@ scripts:
   scrollspy: true
   tab: true
   affix: true
-	 </code>
- </pre>
+~~~
 

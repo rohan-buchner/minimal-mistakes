@@ -19,7 +19,7 @@ One of the problems (in terms of DOM alteration via injection) the above scenari
 
 In comes the [Mutation Observer](https://hacks.mozilla.org/2012/05/dom-mutationobserver-reacting-to-dom-changes-without-killing-browser-performance/). Introduced in September 2011, this piece of awesomeness is just that. Awesome.
 
-<pre><code data-trim class="javascript">
+~~~ javascript
 var MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
 
 // select the target parent node to monitor. 
@@ -56,7 +56,7 @@ observer.observe(document, config);
 
 // at this stage, we'd disconnect the observer, but as the feed gets refreshed. we need to keep watching.
 
-</code></pre>
+~~~
 
 
 .. and just like that. My news feed is able to render markdown... now just to get everyone else to buy into the idea.
