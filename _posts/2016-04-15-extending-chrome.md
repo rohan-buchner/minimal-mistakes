@@ -3,7 +3,6 @@ layout: single
 section-type: post
 title: Extending Chrome
 category: development
-tags: [ 'javascript', 'injection' ]
 ---
 
 We have an internal news feel like system with various other features that's crucial to our companies way of life.

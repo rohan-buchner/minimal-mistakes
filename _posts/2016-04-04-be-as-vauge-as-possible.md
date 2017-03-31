@@ -2,10 +2,8 @@
 layout: single
 section-type: post
 title: Thoughts on app updates...
-category: rant
+category: development
 post-preview-words: 30
-fb-share: True
-tags: [ 'update']
 ---
 
 <img src="/assets/img/posts/2016-04-04-be-as-vauge-as-possible/update_lies.PNG" alt="the update lie" height="300" width="300">

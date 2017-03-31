@@ -3,7 +3,6 @@ layout: single
 section-type: post
 title: Webpack Trickery
 category: development
-tags: [ 'development', 'javascript', 'webpack' ]
 ---
 
 Over the last few months I've been delving deeper into the world of webpack.

@@ -7,14 +7,15 @@
 
 # Site Settings
 locale                   : "en"
-title                    : "{{ RO }}"
-title_separator          : "|"
+title                    : "Rohan Büchner"
+header_main              : "<i class='fa fa-terminal' aria-hidden='true'></i> rohanbuchner"
+title_separator          : "-"
 name                     : "Rohan Büchner"
 description              : "Capetonian Developer & Musician"
 url                      : "https://rohan-buchner.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "rohan-buchner/rohan-buchner.github.io"
-teaser                   : "/assets/images/dunes.jpg" # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 breadcrumbs              : true # true, false (default)
 words_per_minute         : 200
 comments:
@@ -241,6 +242,13 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: # true
-      share: true
+      comments: true
+      share: false
       related: true
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true

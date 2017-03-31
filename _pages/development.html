@@ -1,0 +1,15 @@
+---
+layout: archive
+title: "Development"
+permalink: /development/
+author_profile: false
+---
+
+
+{% for post in paginator.posts %}
+	{% if post.category contains "development" %}
+	  {% include archive-single.html %}
+	{% endif %}
+{% endfor %}
+
+{% include paginator.html %}
