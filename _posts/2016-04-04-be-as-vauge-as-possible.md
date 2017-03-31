@@ -1,7 +1,7 @@
 ---
 layout: single
 section-type: post
-title: On App Updates...
+title: Thoughts on app updates...
 category: rant
 post-preview-words: 30
 fb-share: True
