@@ -6,10 +6,11 @@ author_profile: false
 ---
 
 
+{{ site | jsonify }}
+
+<!-- 
 {% for post in paginator.posts %}
-	{% if post.category contains "development" %}
-	  {% include archive-single.html %}
-	{% endif %}
+  {% include archive-single.html %}	
 {% endfor %}
 
-{% include paginator.html %}
+{% include paginator.html %} -->
