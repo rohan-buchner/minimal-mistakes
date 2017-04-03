@@ -7,7 +7,7 @@ category: development
 
 As of Webpack 2 and some of the plugin updates that go along with it there has been an issue with bootstrap-loader.
 
-~~~ javascrip
+~~~ javascript
 Module not found: Error: Cannot resolve module '[object Object]./lib/bootstrap.styles.loader.js' in /home/user/work/project/node_modules/bootstrap-loader
  @ ./~/bootstrap-loader/lib/bootstrap.loader.js!./~/bootstrap-loader/no-op.js 1:21-1087
 ~~~
