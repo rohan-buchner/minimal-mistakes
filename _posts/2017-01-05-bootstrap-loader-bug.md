@@ -24,4 +24,23 @@ New:
 [{ loader: 'style-loader', options: {...} }, { loader: 'css-loader', options: {...} } ]
 ~~~
 
-The temporaty fix for this is to do the following post build fix. In summaray the script alters the ExtractTextPlugins output to return the old format. Read more about the issue on this [thread](https://github.com/shakacode/bootstrap-loader/issues/238) 
+The temporaty fix for this is to run the script (I can't claim credit for it though...)
+
+~~~ javascript
+var fs = require('fs');
+
+var theFile = './node_modules/bootstrap-loader/lib/utils/buildExtractStylesLoader.js';
+
+fs.readFile(theFile, 'utf-8', function(err, data){
+  if (err) throw err; // do something here: console.log for example
+
+  var result = data.replace("return ExtractTextPlugin.extract({ fallbackLoader: fallbackLoader, loader: restLoaders });", "return [ ExtractTextPlugin.loader().loader + '?omit\&remove',    fallbackLoader,    restLoaders  ].join('!');");
+
+  fs.writeFile(theFile, result, 'utf8', function (err) {
+    if (err) throw err; // do something her: console.log for example
+  });
+});
+~~~
+
+
+ In summary the script alters the buildExtractStylesLoader.js output to return the old format. Read more about the issue on this [thread](https://github.com/shakacode/bootstrap-loader/issues/238) 
