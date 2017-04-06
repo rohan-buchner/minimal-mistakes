@@ -7,7 +7,7 @@ category: development
 
 I'm currently working in a system with decoupled components and services. Still being new to Rxjs and Typescript (for Angular 2), I'm not 100% sure of all the utilities available in the RxJs arsenal, but today the need arised to have some form of generic pub/sub or broadcaster helper service. This seemed to do the trick for the time being, but I'd like to improve, or add the ability to only publish to specific subscribers without having to force a property in the payload that we need to use to discriminate who the consumers should be. 
 
-broadcast.service.js
+**broadcast.service.js:**
 ~~~ javascript
 import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
@@ -29,8 +29,8 @@ export class BroadcastService {
 }
 ~~~
 
-And to use it:
 
+**...and to use it:**
 ~~~ javascript
 import {Component} from '@angular/core';
 import {BroadcastService} from "broadcast.service";
