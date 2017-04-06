@@ -1,7 +1,7 @@
 ---
 layout: single
 section-type: post
-title: Webpack Trickery
+title: Webpack Tips and Tricks
 category: development
 ---
 
@@ -98,7 +98,7 @@ module.exports = {
 
  ...and add a *.bootstraprc* file. This will allow you to manually configure and cherry pick features for your bootstap build.
 
-~~~ javascript
+~~~ yml
 # Output debugging info
 # loglevel: debug
 
@@ -156,8 +156,6 @@ styleLoaders:
 # Usually this endpoint-file contains list of @imports of your application styles.
 appStyles:
 # ./src/scss/_custom.scss
-
-
 
 ### Bootstrap styles
 styles:
@@ -228,3 +226,78 @@ scripts:
   affix: true
 ~~~
 
+
+**To pass environmental variables or static properties to your app (eg like API paths):**
+
+Webpack had various ways of doing this but the route that worked the best for myself was to have each environent have its own .env file, and have webpack map the properties inside the .env to its appropriate property within the app.
+
+~~~ javascript
+
+webpack.conf.js
+
+// npm install dotenv --save-dev
+// dotenv is a super simple way to access .env files
+require('dotenv').config();
+
+new webpack.DefinePlugin({
+    "process.env": {
+       "KEY": process.env.KEY,    // <--- process.env in this instance does not equal the runtime process.env of the app.
+       "FOO": {                   //      think of webpack and the running application of having 2 seperate contexes 
+         "BAR": "yolo",
+         "BOOLEAN_PROPERTY": true
+      }
+    }
+})
+
+~~~
+
+
+
+**Need for speed. How to make your build faster**
+
+Once your solution become more sizable you might notice that it can get a bit slower from time to time, especially when using something like TypeScript. The below are a few options that you can make use of, depending on your use case.
+
+1. Use [HappyPack](https://github.com/amireh/happypack) to multithread certain loaders.
+
+~~~ javascript
+
+var HappyPack = require('happypack');
+var happyThreadPool = HappyPack.ThreadPool({size: 5});
+
+module.exports = {
+  module: {
+    loaders: [
+      {
+        test: /.html$/,
+        use: ['happypack/loader?id=html'],   // <---- loader?id=BUNDLE_ID
+        exclude: /node_modules/
+      }
+    ],
+    plugins: [
+      new HappyPack({
+        id: 'html',                          // <----- BUNDLE_ID
+        threadPool: happyThreadPool,
+        loaders: ['html-loader']             // loaders for this specific bundle
+      })
+    }
+}
+~~~
+
+2. Have specific dev build options to toggle source maps on or off (depeding on the task at hand)
+~~~ javascript
+ // eval === fast, but not very useful, source-maps === useful, but slower (in larger projects)
+ devtool: process.env.ENVIRONMENT === 'dev' ? 'eval' : 'source-maps'     
+~~~
+
+3. For TypeScript => set transpileOnly to true. If you want to speed up compilation a lot you can use this option, but you end up losing a lot of benefits. [docs](https://github.com/TypeStrong/ts-loader)
+
+~~~ javascript
+ loaders: [
+      { 
+        test: /\.ts?$/,
+        loader: 'ts-loader?' + JSON.stringify({
+          transpileOnly: true
+        }) 
+      }
+    ]
+~~~
