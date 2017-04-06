@@ -27,10 +27,10 @@ export class BroadcastService {
     this._broadcasts.next(Object.assign({}, data));
   }
 }
-~~~ javascript
+~~~
 
+And to use it :)
 
-Usage:
 ~~~ javascript
 import {Component} from '@angular/core';
 import {BroadcastService} from "broadcast.service";
