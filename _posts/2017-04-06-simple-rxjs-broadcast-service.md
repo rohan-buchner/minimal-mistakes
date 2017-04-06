@@ -29,7 +29,7 @@ export class BroadcastService {
 }
 ~~~
 
-And to use it :)
+And to use it:
 
 ~~~ javascript
 import {Component} from '@angular/core';
