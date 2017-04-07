@@ -7,15 +7,18 @@ category: development
 
 Over the last few months I've been delving deeper into the world of webpack.
 
-Below I'll demonstrate a few cool tricks that I've learned that really isn't as obvious as it should be. 
+Below I'll demonstrate a few cool tricks that I've learned that really isn't as obvious as it should be, which I believe any dev that using Webpack will encounter at some stage or another.
 
- **Context:**
-   - I'm using webpack for an angular 2 project thus Im using TypeScript... buuuut, the items I'll highlight will be usefull for anyone
+ > Context: I'm using Webpack for an Angular2 project, thus I'm using TypeScript, and some of the examples are pertaining to TypeScript only solutions.
 
+--------------------------------------
 
-**Serving 3rd party js libraries such as jQuery, momentjs etc:**
+<div style="margin: 0;"><strong>How to: Serve 3rd party JavaScript libraries</strong></div>
+<sub><sup>that do not have TypeScript wrapped modules (yet)... if working in TypeScript</sup></sub>
 
-In your webpack.js file
+Install the 3rd party module via npm, then expose it via an alias:
+
+<div style="margin: 0;"><sub><sup>webpack.conf.js:</sup></sub></div>
 ~~~ javascript
 module.exports = {
   module: {
@@ -28,30 +31,32 @@ module.exports = {
 }
 ~~~
 
-In the example above, moment was installed using npm and located in my node_modules folder.
-In my app code the above allows me "access" the moment foldr as such via:
-
+<div style="margin: 0;"><sub><sup>Somewhere in your app</sup></sub></div>
 ~~~ javascript
 import * as moment from 'moment/moment';
 ~~~
 
-**Adding Bootstrap or FontAwesome**
+--------------------------------------
+
+**How to: Import Bootstrap and FontAwesome.**
 
 There are 2 amazing opensource projects: [bootstrap-loader](https://github.com/shakacode/bootstrap-loader) and [font-awesome-loader](https://github.com/shakacode/font-awesome-loader), both made by the [ShakaCode](https://github.com/shakacode) team.
 
-To implment them install via npm and add the following to your webpack entry
+To implement them, install via npm, and add the following to your webpack entry point:
 
+<div style="margin: 0;"><sub><sup>webpack.conf.js:</sup></sub></div>
 ~~~ javascript
   entry: {
     vendor: [
       'font-awesome-loader',
-      bootstrapEntryPoints.dev   //or .prod
+      bootstrapEntryPoints.dev   // <=== bootstrapEntryPoints.helper.js
     ]
   }
 ~~~
 
- Setup a helper service or point to the config path manually:
+Then setup a helper service or point to the config path manually:
 
+<div style="margin: 0;"><sub><sup>bootstrapEntryPoints.helper.js:</sup></sub></div>
 ~~~ javascript
 'use strict';
 
@@ -98,6 +103,7 @@ module.exports = {
 
  ...and add a *.bootstraprc* file. This will allow you to manually configure and cherry pick features for your bootstap build.
 
+<div style="margin: 0;"><sub><sup>.bootstraprc:</sup></sub></div>
 ~~~ yml
 # Output debugging info
 # loglevel: debug
@@ -227,14 +233,15 @@ scripts:
 ~~~
 
 
-**To pass environmental variables or static properties to your app (eg like API paths):**
+--------------------------------------
+
+<div style="margin: 0;"><strong>How to: Pass environmental variables.</strong></div>
+<sub><sup>like API paths, or environment specfic static properties</sup></sub>
 
 Webpack had various ways of doing this but the route that worked the best for myself was to have each environent have its own .env file, and have webpack map the properties inside the .env to its appropriate property within the app.
 
+<div style="margin: 0;"><sub><sup>webpack.conf.js:</sup></sub></div>
 ~~~ javascript
-
-webpack.conf.js
-
 // npm install dotenv --save-dev
 // dotenv is a super simple way to access .env files
 require('dotenv').config();
@@ -248,19 +255,19 @@ new webpack.DefinePlugin({
       }
     }
 })
-
 ~~~
 
 
+--------------------------------------
 
-**Need for speed. How to make your build faster**
+**How to: Make your build faster.**
 
 Once your solution become more sizable you might notice that it can get a bit slower from time to time, especially when using something like TypeScript. The below are a few options that you can make use of, depending on your use case.
 
-1. Use [HappyPack](https://github.com/amireh/happypack) to multithread certain loaders.
+* Use [HappyPack](https://github.com/amireh/happypack) to multithread certain loaders.
 
+<div style="margin: 0;"><sub><sup>webpack.conf.js:</sup></sub></div>
 ~~~ javascript
-
 var HappyPack = require('happypack');
 var happyThreadPool = HappyPack.ThreadPool({size: 5});
 
@@ -283,14 +290,19 @@ module.exports = {
 }
 ~~~
 
-2. Have specific dev build options to toggle source maps on or off (depeding on the task at hand)
+For TypeScript:
+
+* Have specific dev build options to toggle source maps on or off (depeding on the task at hand)
+
+<div style="margin: 0;"><sub><sup>webpack.conf.js:</sup></sub></div>
 ~~~ javascript
  // eval === fast, but not very useful, source-maps === useful, but slower (in larger projects)
  devtool: process.env.ENVIRONMENT === 'dev' ? 'eval' : 'source-maps'     
 ~~~
 
-3. For TypeScript => set transpileOnly to true. If you want to speed up compilation a lot you can use this option, but you end up losing a lot of benefits. [docs](https://github.com/TypeStrong/ts-loader)
+*  Set transpileOnly to true. If you want to speed up compilation a lot you can use this option, but you end up losing a lot of benefits. [docs](https://github.com/TypeStrong/ts-loader)
 
+<div style="margin: 0;"><sub><sup>webpack.conf.js:</sup></sub></div>
 ~~~ javascript
  loaders: [
       { 
