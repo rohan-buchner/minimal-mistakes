@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: single
 section-type: post
 category: life
