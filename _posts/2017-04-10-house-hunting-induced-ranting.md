@@ -4,8 +4,6 @@ layout: single
 section-type: post
 category: life
 ---
-## House hunting induced ranting
-
 Before I get into it, I'd like to deviate off topic somewhat just to set the scene as is where.
 
 I often wonder what the ideal answer is to this. Living in South Africa is currently making things that (I'd assume) the previous generation took for granted, very hard or unatainable. I've often been told by partents, older friends, or even my current generation peers: "Renting is just you paying off someone elses bond"...
