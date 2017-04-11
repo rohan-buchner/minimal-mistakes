@@ -4,7 +4,6 @@ section-type: post
 title: Webpack Tips and Tricks
 category: development
 published: true
-header: null
 overlay_image: /assets/img/webpack.png
 ---
 
