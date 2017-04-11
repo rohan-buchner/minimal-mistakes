@@ -1,11 +1,10 @@
 ---
-layout: splash
 section-type: post
 title: Webpack Tips and Tricks
 category: development
 published: true
 header:
-  overlay_image: /assets/webpack.png
+  image: /assets/webpack.png
 ---
 
 Over the last few months I've been delving deeper into the world of webpack.
