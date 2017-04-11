@@ -3,6 +3,9 @@ layout: single
 section-type: post
 title: Webpack Tips and Tricks
 category: development
+published: true
+header: null
+overlay_image: /assets/img/webpack.jpg
 ---
 
 Over the last few months I've been delving deeper into the world of webpack.
