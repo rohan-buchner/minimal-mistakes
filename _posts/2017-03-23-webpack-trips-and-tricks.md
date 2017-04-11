@@ -5,7 +5,7 @@ title: Webpack Tips and Tricks
 category: development
 published: true
 header:
-  overlay_image: /assets/img/webpack.png
+  overlay_image: /assets/webpack.png
 ---
 
 Over the last few months I've been delving deeper into the world of webpack.
