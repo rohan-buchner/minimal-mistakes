@@ -5,9 +5,9 @@ title: Make PHPStorm Suck Less
 category: development
 ---
 
-#How to setup your PHPStorm environment so that it sucks less... 
+# How to setup your PHPStorm environment so that it sucks less...
 
-##Make it fast:
+## Make it fast:
 
 Go to:
 `Help > Edit Custom VM Options`
@@ -51,7 +51,7 @@ Next is to exclude the project items you dont need. These will generally be fold
 To do the above, in your project explorer, right click on any folder, and then select:
 `Mark Directory as > Excluded` 
 
-##Give it context:
+## Give it context:
 
 Make sure PHPStorm knows here your local tooling and frameworks are.. 
 (because it might not)
@@ -75,7 +75,7 @@ Go to:
 * Set your shell path to whatever shell you may or may not be using (ZSH, fish, or leave as default)
 * For some plugins or themes for ZSH / fish you need to disable shell integration. (Try both and see what works for you)
 
-##Make it smart:
+## Make it smart:
 * Setup [PHP IDE Helper](https://github.com/barryvdh/laravel-ide-helper) if using Laravel
 
 * Install PHPMD, and CodeSniffer in the terminal *(I hope you have [brew](https://brew.sh/) installed already)*
