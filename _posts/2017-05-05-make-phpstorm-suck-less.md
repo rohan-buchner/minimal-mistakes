@@ -1,7 +1,7 @@
 ---
 layout: single
 section-type: post
-title: Simple RxJs Broadcast Service
+title: Make PHPStorm Suck Less
 category: development
 ---
 
