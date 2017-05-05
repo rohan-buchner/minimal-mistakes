@@ -1,5 +1,8 @@
 ---
-published: false
+published: true
+layout: single
+section-type: post
+category: development
 ---
 #How to setup your PHPStorm environment so that it sucks less... 
 
@@ -92,4 +95,3 @@ Go to:
         + In any terminal run `which phpmd`
             
 > All thats left to do it setup code sniffer and mess detector rules so that you don't code like a monkey, and that everyone can see what a smarty pants you are
-
