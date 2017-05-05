@@ -1,6 +1,10 @@
 ---
-published: true
+layout: single
+section-type: post
+title: Simple RxJs Broadcast Service
+category: development
 ---
+
 #How to setup your PHPStorm environment so that it sucks less... 
 
 ##Make it fast:
