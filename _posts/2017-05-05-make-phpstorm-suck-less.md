@@ -61,12 +61,13 @@ Go to:
 
 * Choose your PHP version
 * Add CLI Interpreter
-    * If none is present, add one. If your PHP was added via brew, point to the location withing Cellar as to have access to the php.ini file (and not the sysmlink in `/usr/local/bin`)
+    * If none is present, add one. 
+        * If your PHP was added via brew, point to the location withing Cellar as to have access to the php.ini file (and not the sysmlink in `/usr/local/bin`)
 
 Go to:
 `PHPStorm > Preferences > PHP > Composer`
 
-* Setup interpreter to point to previously setup interpreter
+* Setup interpreter to point to previously setup CLI interpreter
 * Point to your local composer (mine is symlinked to `/usr/local/bin/composer`)
 
 Go to:
@@ -83,16 +84,16 @@ Go to:
     * `brew install phpcs`
     * `brew install phpmd`
 
-Back to the IDE now, link up all the utils via the preferences pane:
+Back to the IDE now, link up all the above utils via PHPStorm preferences:
 
 Go to:
 `Languages & Prefrences > PHP`
 
- * `Code Sniffer`
+* `Code Sniffer`
      - Update the path to point to your local `phpcs` path
-        + In any terminal run `which phpcs`
+        + (Get the path by running `which phpcs` in the terminal)
 * `Mess Detector`
      - Update the path to point to your local `phpmd` path
-        + In any terminal run `which phpmd`
+        + (Get the path by running `which phpmd` in the terminal)
             
 > All thats left to do it setup code sniffer and mess detector rules so that you don't code like a monkey, and that everyone can see what a smarty pants you are
